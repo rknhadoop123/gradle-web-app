@@ -1,7 +1,7 @@
 node{
      
     stage('SCM Checkout'){
-        git url: 'https://github.com/devopstrainingbanglore/gradle-web-app.git',branch: 'master'
+        git url: 'https://github.com/rknhadoop123/gradle-web-app.git',branch: 'master'
     }
     
     stage("Gradle Clean Build"){
