@@ -23,8 +23,10 @@ node{
     }
 
     stage('Push Docker Image'){
-        withCredentials([string(credentialsId: 'Docker_Hub_Pwd', variable: 'Docker_Hub_Pwd')]) {
-          sh "docker login -u ramadocker123 -p ${Docker_Hub_Pwd}"
+       withCredentials([string(credentialsId: 'DockerSecretTextPassword', variable: 'Docker_Hub_Password')]) {
+    // some block
+
+          sh "docker login -u ramadocker123 -p ${Docker_Hub_Password}"
         }
         sh 'docker push ramadocker123/gradle-web-app'
      }
